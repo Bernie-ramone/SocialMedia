@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FluentValidation;
+﻿using FluentValidation;
 using SocialMedia.Core.Dtos;
+using System;
 
 namespace SocialMedia.Infrastructure.Validators
 {
@@ -12,7 +10,7 @@ namespace SocialMedia.Infrastructure.Validators
         {
             RuleFor(post => post.Description)
                 .NotNull()
-                .Length(10, 15);
+                .Length(10, 100);
 
             RuleFor(post => post.Date)
                 .NotNull()
