@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SocialMedia.Core.Dtos;
+using SocialMedia.Core.Entities;
 using SocialMedia.Core.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using SocialMedia.Core.Entities;
 
 namespace SocialMedia.Api.Controllers
 {
@@ -43,8 +43,7 @@ namespace SocialMedia.Api.Controllers
         public async Task<IActionResult> Post(PostDto postDto)
         {
             var post = _mapper.Map<Post>(postDto);
-
-
+            
             await _postRepository.InsertPost(post);
             return Ok(post);
         }
