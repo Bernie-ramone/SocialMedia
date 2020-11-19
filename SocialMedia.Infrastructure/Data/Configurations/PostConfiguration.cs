@@ -9,7 +9,7 @@ namespace SocialMedia.Infrastructure.Data.Configurations
         public void Configure(EntityTypeBuilder<Post> builder)
         {
             builder.ToTable("Publicacion");
-            builder.HasKey(e => e.PostId);
+            builder.HasKey(e => e.Id);
 
             builder.Property(e => e.Description)
                 .HasColumnName("Descripcion")
@@ -18,7 +18,7 @@ namespace SocialMedia.Infrastructure.Data.Configurations
                 .IsUnicode(false);
 
             builder.Property(e => e.Date).HasColumnType("datetime").HasColumnName("Fecha");
-            builder.Property(e => e.PostId).HasColumnName("IdPublicacion");
+            builder.Property(e => e.Id).HasColumnName("IdPublicacion");
             builder.Property(e => e.UserId).HasColumnName("IdUsuario");
 
             builder.Property(e => e.Image)
